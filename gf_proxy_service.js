@@ -35,9 +35,7 @@ app.post('/index.php',function(req,res){
             console.log(body);
             res.send(body)
         });
-    }
-
-    if(query.a && query.a === 'heartBeatPacket'){
+    }else{
 
         let _options = {
             uri:options.uri,
@@ -50,32 +48,7 @@ app.post('/index.php',function(req,res){
         });
     }
 
-    if(query.a && query.a === 'heartBeatPacket'){
-
-        let _options = {
-            uri:options.uri,
-            headers:options.headers,
-            form:query
-        };
-
-        request.post(_options, function(error, response, body){
-            console.log(body);
-            res.send(body)
-        });
-    }
-
-    if(query.a && query.a === 'bannerEvent'){
-
-        let _options = {
-            uri:options.uri,
-            headers:options.headers,
-            form:query
-        };
-
-        request.post(_options, function(error, response, body){
-            console.log(body);
-            res.send(body)
-        });
-    }
+    //heartBeatPacket  bannerEvent
+ 
 
 });
