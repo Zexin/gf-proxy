@@ -1,16 +1,14 @@
 需要在服务器上做一些配置
 
-apache2配置示例：
+a2enmod proxy
+a2enmod proxy_http
 
-apache2.conf:
+开启代理和转发模块
 
-加入
-
-LoadModule proxy_module modules/mod_proxy.so
-LoadModule proxy_http_module modules/mod_proxy_http.so
-这两个文件可能不在这个位置，可以到/usr/lib/apache2/下看看
 
 站点配置：
+
+ios.transit.gf.ppgame.com.conf
 
 <VirtualHost *>
     ServerAdmin aaa@163.com
@@ -18,3 +16,7 @@ LoadModule proxy_http_module modules/mod_proxy_http.so
     ProxyPass / http://localhost:9999/
     ProxyPassReverse / http://localhost:9999/
 </VirtualHost>
+
+开启站点：
+a2ensite ios.transit.gf.ppgame.com
+
