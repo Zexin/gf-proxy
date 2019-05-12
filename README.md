@@ -10,7 +10,7 @@ a2enmod proxy_http
 
 ios.transit.gf.ppgame.com.conf
 
-<VirtualHost *>
+<VirtualHost *:80>
     ServerAdmin aaa@163.com
     ServerName ios.transit.gf.ppgame.com
     ProxyPass / http://localhost:9999/
